@@ -1,0 +1,26 @@
+<header class="bg-blue-600 text-white shadow">
+	<div class="container mx-auto flex items-center justify-between py-4 px-6">
+	  <!-- Logo / Title -->
+	  <h1 class="text-lg font-bold">Warehouse Management</h1>
+
+	  <!-- Navigation Links -->
+	  <nav class="flex items-center space-x-4">
+		<!-- Common Links -->
+		<a routerLink="/login" *ngIf="!isLoggedIn()" class="hover:underline">Login</a>
+		<a routerLink="/register" *ngIf="!isLoggedIn()" class="hover:underline">Register</a>
+		<a routerLink="/admin" *ngIf="isLoggedIn()" class="hover:underline">Admin</a>
+		<a routerLink="/supplier" *ngIf="isLoggedIn()" class="hover:underline">Supplier</a>
+		<a routerLink="/customer" *ngIf="isLoggedIn()" class="hover:underline">Customer</a>
+		<a routerLink="/orders" *ngIf="isLoggedIn()" class="hover:underline">Orders</a>
+
+		<!-- Logout Button -->
+		<button
+		  *ngIf="isLoggedIn()"
+		  (click)="logout()"
+		  class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+		>
+		  Logout
+		</button>
+	  </nav>
+	</div>
+  </header>
